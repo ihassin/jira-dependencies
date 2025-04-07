@@ -14,6 +14,11 @@ graph.add_dependency(ticket: 1552, is_blocking: 1458)
 graph.add_dependency(ticket: 1552, is_blocking: 1488)
 graph.add_dependency(ticket: 1552, is_blocking: 1489)
 graph.add_dependency(ticket: 1552, is_blocking: 1490)
+graph.add_dependency(ticket: 1552, is_blocking: 1410)
+graph.add_dependency(ticket: 1552, is_blocking: 1490)
+graph.add_dependency(ticket: 1552, is_blocking: 1489)
+graph.add_dependency(ticket: 1552, is_blocking: 1488)
+graph.add_dependency(ticket: 1552, is_blocking: 1458)
 
 graph.add_dependency(ticket: 1544, is_blocking: 1410)
 graph.add_dependency(ticket: 1544, is_blocking: 1412)
@@ -40,7 +45,6 @@ graph.add_dependency(ticket: 1438, is_blocking: 1534)
 graph.add_dependency(ticket: 1532, is_blocking: 1410)
 graph.add_dependency(ticket: 364, is_blocking: 1410)
 graph.add_dependency(ticket: 1357, is_blocking: 1410)
-graph.add_dependency(ticket: 1552, is_blocking: 1410)
 
 graph.add_dependency(ticket: 1357, is_blocking: 1502)
 graph.add_dependency(ticket: 1255, is_blocking: 1502)
@@ -54,9 +58,6 @@ graph.add_dependency(ticket: 1357, is_blocking: 1493)
 
 graph.add_dependency(ticket: 1357, is_blocking: 1491)
 
-graph.add_dependency(ticket: 1552, is_blocking: 1490)
-graph.add_dependency(ticket: 1552, is_blocking: 1489)
-graph.add_dependency(ticket: 1552, is_blocking: 1488)
 
 graph.add_dependency(ticket: 1532, is_blocking: 1488)
 graph.add_dependency(ticket: 1532, is_blocking: 1480)
@@ -105,7 +106,6 @@ graph.add_dependency(ticket: 1270, is_blocking: 1460)
 graph.add_dependency(ticket: 1552, is_blocking: 1459)
 
 graph.add_dependency(ticket: 1532, is_blocking: 1458)
-graph.add_dependency(ticket: 1552, is_blocking: 1458)
 
 graph.add_dependency(ticket: 1583, is_blocking: 1456)
 
@@ -114,6 +114,7 @@ graph.add_dependency(ticket: 1584, is_blocking: 1454)
 graph.add_dependency(ticket: 1438, is_blocking: 1368)
 graph.add_dependency(ticket: 1438, is_blocking: 1431)
 graph.add_dependency(ticket: 1438, is_blocking: 1534)
+graph.add_dependency(ticket: 1333, is_blocking: 948)
 
 graph.add_dependency(ticket: 1425, is_blocking: 219)
 graph.add_dependency(ticket: 1425, is_blocking: 1363)
