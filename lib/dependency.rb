@@ -10,8 +10,8 @@ class DependencyGraph
              end
   end
 
-  def add_dependency(from:, to:)
-    @graph[from] << to
+  def add_dependency(ticket:, is_blocking:)
+    @graph[is_blocking] << ticket
   end
 
   def dependencies_for(node:)
