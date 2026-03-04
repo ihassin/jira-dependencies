@@ -11,4 +11,4 @@ graph = DependencyGraph.new
 
 graph = DependencyGraph.new(file_name: 'rspec_graph.yml')
 
-graph.generate_graph(file_name: 'mbusa.png')
+graph.generate_graph(file_name: 'ingestion.png')
