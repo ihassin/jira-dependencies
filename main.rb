@@ -177,3 +177,4 @@ graph.save_graph(file_name: 'graph.yml')
 
 puts "#{graph.most_depended_on} will unblock the dependency graph"
 puts "#{graph.ultimate_dependencies} has the most dependencies"
+

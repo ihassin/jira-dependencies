@@ -14,39 +14,23 @@ class DependencyGraph
     @graph[is_blocking] << ticket
   end
 
+  def ultimate_dependencies
+    counts = Hash.new(0)
+
+    @graph.keys.each do |node|
+      dependents = dependencies_for(node: node)
+      counts[node] += dependents.size
+    end
+
+    max_count = counts.values.max
+    counts.select { |_, count| count == max_count }.keys
+  end
+
   def dependencies_for(node:)
     visited = Set.new
     collect_dependencies(node, visited)
     visited.delete(node) # Optional: remove the node itself from results
     visited.to_a
-  end
-
-  def most_depended_on
-    counts = Hash.new(0)
-
-    @graph.each_value do |deps|
-      deps.each { |dep| counts[dep] += 1 }
-    end
-
-    max_count = counts.values.max
-    return [] if max_count.nil?
-
-    counts.select { |_, count| count == max_count }.keys
-  end
-
-  def ultimate_dependencies
-    counts = Hash.new(0)
-
-    @graph.keys.each do |node|
-      dependencies_for(node: node).each do |dep|
-        counts[dep] += 1
-      end
-    end
-
-    max_count = counts.values.max
-    return [] if max_count.nil?
-
-    counts.select { |_, count| count == max_count }.keys
   end
 
   def save_graph(file_name:)
