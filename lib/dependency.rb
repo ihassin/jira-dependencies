@@ -55,7 +55,7 @@ class DependencyGraph
     # Reverse edges: dependency -> parent
     @graph.each do |parent, dependencies|
       dependencies.each do |dependency|
-        g.add_edges(nodes[dependency], nodes[parent]) unless parent.nil?
+        g.add_edges(nodes[dependency], nodes[parent], label: 'Needed by', color: 'red') unless parent.nil?
       end
     end
 
