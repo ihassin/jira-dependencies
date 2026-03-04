@@ -35,7 +35,7 @@ RSpec.describe 'Dependency mapping' do
     expect(graph.ultimate_dependencies).to include(300)
   end
 
-  it 'persists and loads' do
+  it 'Persists and loads' do
     graph = DependencyGraph.new
     graph.add_dependency(ticket: 1021, is_blocking: 3)
     graph.add_dependency(ticket: 1020, is_blocking: 3)

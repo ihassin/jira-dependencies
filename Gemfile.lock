@@ -75,6 +75,7 @@ GEM
     regexp_parser (2.10.0)
     reline (0.6.1)
       io-console (~> 0.5)
+    rexml (3.4.4)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -102,6 +103,8 @@ GEM
     rubocop-ast (1.44.0)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
+    ruby-graphviz (1.2.5)
+      rexml
     ruby-progressbar (1.13.0)
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
@@ -128,6 +131,7 @@ DEPENDENCIES
   nokogiri
   rspec
   rubocop
+  ruby-graphviz
 
 BUNDLED WITH
    2.6.3

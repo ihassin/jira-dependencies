@@ -1,5 +1,6 @@
 require 'set'
 require 'yaml'
+require 'graphviz'
 
 class DependencyGraph
   def initialize(file_name: '')
@@ -35,6 +36,31 @@ class DependencyGraph
 
   def save_graph(file_name:)
     File.write(file_name, @graph.to_yaml)
+  end
+
+  def generate_graph(file_name:)
+    # Create directed graph
+    g = GraphViz.new(:G, type: :digraph)
+
+    # Force left-to-right layout
+    g[:rankdir] = 'LR'
+
+    nodes = {}
+
+    # Create all nodes
+    (@graph.keys + @graph.values.flatten).uniq.each do |node|
+      nodes[node] = g.add_nodes(node.to_s)
+    end
+
+    # Reverse edges: dependency -> parent
+    @graph.each do |parent, dependencies|
+      dependencies.each do |dependency|
+        g.add_edges(nodes[dependency], nodes[parent])
+      end
+    end
+
+    # Output PNG
+    g.output(png: file_name)
   end
 
   private
