@@ -6,9 +6,18 @@ puts 'Loading dependencies'
 
 graph = DependencyGraph.new
 
-# graph.add_dependency(ticket: 1561, is_blocking: 1460)
-# graph.save_graph(file_name: 'graph.yml')
+graph.add_dependency(ticket: 1020, is_blocking: 3)
+graph.add_dependency(ticket: 1021, is_blocking: 3)
+graph.add_dependency(ticket: 3, is_blocking: 30)
 
-graph = DependencyGraph.new(file_name: 'rspec_graph.yml')
+graph.add_dependency(ticket: 120, is_blocking: 6)
+graph.add_dependency(ticket: 121, is_blocking: 6)
+graph.add_dependency(ticket: 122, is_blocking: 6)
+graph.add_dependency(ticket: 6, is_blocking: 300)
+graph.add_dependency(ticket: 1020, is_blocking: 300)
+
+graph.save_graph(file_name: 'graph.yml')
+
+graph = DependencyGraph.new(file_name: 'graph.yml')
 
 graph.generate_graph(file_name: 'ingestion.png')
