@@ -49,13 +49,13 @@ class DependencyGraph
 
     # Create all nodes
     (@graph.keys + @graph.values.flatten).uniq.each do |node|
-      nodes[node] = g.add_nodes(node.to_s)
+      nodes[node] = g.add_nodes(node.to_s) unless node.nil?
     end
 
     # Reverse edges: dependency -> parent
     @graph.each do |parent, dependencies|
       dependencies.each do |dependency|
-        g.add_edges(nodes[dependency], nodes[parent])
+        g.add_edges(nodes[dependency], nodes[parent]) unless parent.nil?
       end
     end
 
