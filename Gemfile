@@ -8,5 +8,6 @@ gem 'ruby-graphviz'
 gem 'highline'
 gem 'httparty'
 gem 'nokogiri'
+gem 'rake'
 gem 'rspec', group: %w[development test]
 gem 'rubocop', group: 'development'
