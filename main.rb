@@ -2,6 +2,8 @@
 
 require_relative './lib/dependency'
 
+FILE_NAME = 'ingestion.png'
+
 puts 'Loading dependencies'
 
 graph = DependencyGraph.new
@@ -18,4 +20,6 @@ graph.add_dependency(ticket: 7890, is_blocking: 7887)
 graph.save_graph(file_name: 'graph.yml')
 # graph = DependencyGraph.new(file_name: 'graph.yml')
 
-graph.generate_graph(file_name: 'ingestion.png')
+graph.generate_graph(file_name: FILE_NAME)
+
+puts "Image created in file://#{FILE_NAME}"
