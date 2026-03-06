@@ -2,7 +2,7 @@
 
 require_relative './lib/dependency'
 
-FILE_NAME = 'ingestion.png'
+FILE_NAME = 'ingestion.png'.freeze
 
 puts 'Loading dependencies'
 
